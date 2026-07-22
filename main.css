@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
+  min-width: 100vw;
+  background-image: url("Assets/flower-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  p {
+    color: white;
+    margin-top: auto;
+    margin-bottom: 1em;
+    backdrop-filter: blur(10px) brightness(60%);
+    padding: 0.5em;
+    border-radius: 1em;
+    max-width: 30dvw;
+    min-width: 20dvw;
+    text-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  main {
+    backdrop-filter: blur(10px) brightness(80%);
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2em;
+    margin-top: auto;
+    min-height: 70vh;
+    max-height: 90vh;
+    min-width: 60%;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+
+    .heading {
+      max-height: 100px;
+      min-height: 10dvh;
+      width: 100%;
+      padding: 1.5em 1.5em 1.5em 2em;
+      display: flex;
+      h1 {
+        color: rgb(11, 7, 0);
+        text-shadow: 3px 3px rgb(164, 164, 164);
+        text-size-adjust: none;
+      }
+
+      .inputbox {
+        max-height: 60%;
+        min-width: 50%;
+        max-width: 50%;
+        min-height: auto;
+        margin-left: auto;
+        background: rgba(0, 0, 0, 0.2);
+        display: flex;
+        border-radius: 1em;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        #taskInput {
+          width: 100%;
+          background: transparent;
+          border: none;
+          outline: none;
+          padding-inline-start: 1em;
+          color: white;
+          font-size: larger;
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+          }
+        }
+        button {
+          background: transparent;
+          border: none;
+          outline: none;
+          padding-inline: 1.5em;
+          transition: all 0.5s ease;
+          border-radius: 1em;
+          color: white;
+          box-shadow:
+            rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+            rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+
+    .Tasks {
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 1em;
+      height: 53dvh;
+      margin: auto 1.5em 1.5em 1.5em;
+      padding: 2em;
+      background: rgba(0, 0, 0, 0.2);
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {display: none;}
+
+      ul {
+        .checked {
+          l {text-decoration: 2px rgb(206, 92, 92) line-through;}
+        }
+        li {
+          cursor: default;
+          display: flex;
+          gap: 1em;
+          align-items: center;
+          border-bottom: 1px dashed wheat;
+          margin-bottom: 1em;
+          padding-bottom: 0.5em;
+          font-size: larger;
+          text-wrap: wrap;
+          color: rgb(250, 250, 250);
+          font-weight: 900;
+          text-transform: capitalize;
+          position: relative;
+          b {
+            position: sticky;
+            left: 0;
+          }
+
+          .delete {
+            text-decoration: none;
+            cursor: pointer;
+            margin-left: auto;
+            border: 1px solid ;
+            padding: 0.5em;
+            border-radius: 0.5em;
+            transition: all 0.2s ease;
+            background: transparent;
+            color: WHITE;
+            text-decoration: none;
+            &:hover {
+              border: 1px solid rgba(255, 255, 255, 0.527);
+              background: rgba(0, 0, 0, 0.2);
+            }
+          }
+        }
+
+        r {
+          cursor: default;
+          display: flex;
+          gap: 1em;
+          align-items: center;
+          border-bottom: 1px dashed wheat;
+          margin-bottom: 1em;
+          padding-bottom: 0.5em;
+          font-size: larger;
+          text-wrap: wrap;
+          color: rgb(250, 250, 250);
+          font-weight: 900;
+          text-transform: capitalize;
+
+          span {
+            cursor: pointer;
+            margin-left: auto;
+            border: 1px solid transparent;
+            padding: 0.5em;
+            border-radius: 0.5em;
+            transition: all 0.2s ease;
+            &:hover {
+              border: 1px solid rgba(255, 255, 255, 0.527);
+              background: rgba(0, 0, 0, 0.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* ---------- Responsive breakpoints ---------- */
+
+@media (max-width: 1024px) {
+    
+  body main {
+    min-width: 80%;
+    max-width: 80%;
+  }
+  body p {
+    min-width: fit-content;
+  }
+}
+
+@media (max-width: 768px) {
+    
+  body main {
+    min-width: 92%;
+    max-width: 92%;
+    min-height: 80vh;
+    max-height: 95vh;
+    border-radius: 1.2em;
+  }
+  body main .heading {
+    flex-direction: column;
+    align-items: center;
+    max-height: none;
+    min-height: auto;
+    padding: 1.2em;
+  }
+  body main .heading .inputbox {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 50px;
+    margin-left: 0;
+  }
+  body main .Tasks {
+    height: 48dvh;
+    padding: 1.2em;
+    margin: auto 1em 1em 1em;
+  }
+  body p {
+    min-width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+    
+  body main .heading {
+    padding: 1em;
+  }
+  body main .heading h1 {
+    white-space: normal;
+  }
+  body main .Tasks {
+    padding: 1em;
+    height: 70dvh;
+  }
+  body main .Tasks ul li span {
+    padding: 0.4em 0.7em;
+    font-size: 0.85rem;
+  }
+
+  body p {
+    min-width: fit-content;
+  }
+}
