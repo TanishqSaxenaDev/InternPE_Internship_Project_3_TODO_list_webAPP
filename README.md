@@ -11,6 +11,8 @@ A fully responsive To-Do List web app built with **pure HTML, CSS, and JavaScrip
 
 This project goes beyond a basic task manager, focusing equally on **user experience** and **efficient functionality**. It strengthened practical skills in responsive layout design, DOM manipulation, array-based data handling, search algorithms, and writing clean, maintainable JavaScript — all built from scratch without any external UI frameworks.
 
+Site Link : https://tanishqsaxenadev.github.io/InternPE_Internship_Project_3_TODO_list_webAPP/
+
 ## ✨ Features
 
 - 🪟 **Modern Glassmorphism UI** — a clean, premium frosted-glass aesthetic using `backdrop-filter`.
